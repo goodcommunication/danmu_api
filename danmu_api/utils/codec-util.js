@@ -437,7 +437,7 @@ function pkcs7Unpad(data){
 }
 
 // ====================== Base64 解码 ======================
-function base64ToBytes(b64) {
+export function base64ToBytes(b64) {
   // 先把 Base64 字符串转换成普通字符
   const binaryString = (typeof atob === 'function')
     ? atob(b64) // 浏览器环境
@@ -472,7 +472,7 @@ function BufferBase64Decode(b64) {
 
 // ====================== 主函数 ======================
 // Uint8Array UTF-8 解码成字符串，替代 TextDecoder
-function utf8BytesToString(bytes) {
+export function utf8BytesToString(bytes) {
   let str = "";
   let i = 0;
   while (i < bytes.length) {
@@ -503,7 +503,7 @@ function utf8BytesToString(bytes) {
 }
 
 // 同时替换 TextEncoder
-function stringToUtf8Bytes(str) {
+export function stringToUtf8Bytes(str) {
   const bytes = [];
   for (let i = 0; i < str.length; i++) {
     let code = str.charCodeAt(i);
@@ -581,7 +581,7 @@ function str2bytes(str) {
 }
 
 // ===================== Base64 编码 =====================
-function bytesToBase64(bytes) {
+export function bytesToBase64(bytes) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
     let result = '';
     let i;
